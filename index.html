@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monumental | Festas e Eventos — Livramento de Nossa Senhora, BA</title>
+<meta name="description" content="O melhor espaço de festas e eventos de Livramento de Nossa Senhora (BA). 2.200m² de elegância Art Déco, jardins e estrutura completa para o seu grande dia.">
+
+<!-- ============================================================
+     OPEN GRAPH — preview do link no WhatsApp, Instagram, Facebook
+     IMPORTANTE:
+     1. Troque "https://monumentalfestas.com.br" pela URL final do site.
+     2. A og:image precisa ser uma URL ABSOLUTA (https://...) de uma
+        foto hospedada junto com o site — recomendado 1200x630px,
+        JPG, abaixo de 300KB. O WhatsApp não aceita caminho relativo.
+     3. Depois de publicar, valide em:
+        https://developers.facebook.com/tools/debug/
+        (o WhatsApp usa o mesmo cache do Facebook — se trocar a
+        imagem depois, use essa ferramenta para forçar atualização)
+     ============================================================ -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Monumental Festas e Eventos">
+<meta property="og:title" content="Monumental | Festas e Eventos — Livramento de Nossa Senhora, BA">
+<meta property="og:description" content="2.200m² de elegância, conforto e natureza para o seu grande dia. Casamentos, 15 anos e eventos corporativos em grande estilo. Reservas: (77) 99802-6100.">
+<meta property="og:url" content="https://monumentalfestas.com.br/">
+<meta property="og:image" content="https://monumentalfestas.com.br/img/og-monumental.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Salão do Monumental Festas e Eventos decorado para evento">
+<meta property="og:locale" content="pt_BR">
+
+<!-- Twitter / X (usa o mesmo padrão) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Monumental | Festas e Eventos — Livramento de Nossa Senhora, BA">
+<meta name="twitter:description" content="2.200m² de elegância, conforto e natureza para o seu grande dia. Reservas: (77) 99802-6100.">
+<meta name="twitter:image" content="https://monumentalfestas.com.br/img/og-monumental.jpg">
+
+<!-- Tema da barra do navegador no celular -->
+<meta name="theme-color" content="#0d1f19">
+<link rel="icon" type="image/png" id="favicon" href="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+<script>
+/* ============================================================
+   IMAGENS — TROQUE AQUI
+   Baixe as fotos do @monumentalfestas e salve numa pasta /img.
+   Cada chave abaixo corresponde a um ponto do site.
+   ============================================================ */
+const IMAGES = {
+  hero:        "img/hero-salao.jpg",        // foto panorâmica do salão decorado (a melhor que tiver)
+  hall:        "img/hall-artdeco.jpg",      // hall de entrada Art Déco
+  salao:       "img/salao-evento.jpg",      // salão durante um evento
+  jardim:      "img/jardim-pergolado.jpg",  // área verde / pergolados
+  // Galeria (grid 6 fotos — mesas postas, decoração, festas, detalhes)
+  g1: "img/galeria-1.jpg",
+  g2: "img/galeria-2.jpg",
+  g3: "img/galeria-3.jpg",
+  g4: "img/galeria-4.jpg",
+  g5: "img/galeria-5.jpg",
+  g6: "img/galeria-6.jpg",
+};
+
+/* Logomarca (embutida em base64 — não precisa de arquivo externo) */
+const LOGO = "data:image/png;base64,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";
+</script>
+
+<style>
+/* ============================================================
+   MONUMENTAL — identidade Art Déco
+   Paleta: verde-esmeralda profundo, champanhe dourado, marfim
+   ============================================================ */
+:root{
+  --verde:      #0d1f19;   /* fundo principal */
+  --verde-2:    #122a21;   /* painéis */
+  --ouro:       #c9a45c;   /* champanhe dourado */
+  --ouro-claro: #e3cb96;
+  --marfim:     #f3eee2;
+  --texto:      #d8d2c2;
+  --hairline:   rgba(201,164,92,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--verde);
+  color:var(--texto);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:300;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3,.deco{font-family:'Manrope',sans-serif;font-weight:600;color:var(--marfim)}
+.eyebrow{
+  font-family:'Plus Jakarta Sans';font-weight:500;font-size:.78rem;
+  letter-spacing:.45em;text-transform:uppercase;color:var(--ouro);
+}
+
+/* ---------- moldura Art Déco escalonada (assinatura) ---------- */
+.deco-frame{position:relative;padding:14px}
+.deco-frame::before,.deco-frame::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+}
+.deco-frame::before{border:1px solid var(--ouro)}
+.deco-frame::after{inset:7px;border:1px solid var(--hairline)}
+.deco-frame .corner{
+  position:absolute;width:22px;height:22px;border:1px solid var(--ouro);
+  pointer-events:none;
+}
+.deco-frame .c1{top:-6px;left:-6px;border-right:none;border-bottom:none}
+.deco-frame .c2{top:-6px;right:-6px;border-left:none;border-bottom:none}
+.deco-frame .c3{bottom:-6px;left:-6px;border-right:none;border-top:none}
+.deco-frame .c4{bottom:-6px;right:-6px;border-left:none;border-top:none}
+
+/* ---------- divisor leque (sunburst) ---------- */
+.fan{display:flex;justify-content:center;margin:0 auto;color:var(--ouro)}
+
+
+/* ---------- logomarca ---------- */
+.logo{display:flex;align-items:center;gap:.75rem}
+.logo-img{width:30px;height:auto;flex:none}
+.hero-logo{width:clamp(56px,8vw,84px);height:auto;margin:0 auto 1.6rem;display:block;
+  filter:drop-shadow(0 2px 12px rgba(0,0,0,.45))}
+footer .logo-img{width:22px}
+
+/* ---------- navegação ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem clamp(1.2rem,5vw,4rem);
+  background:linear-gradient(to bottom,rgba(13,31,25,.92),rgba(13,31,25,0));
+  transition:background .4s;
+}
+nav.solid{background:rgba(13,31,25,.96);border-bottom:1px solid var(--hairline)}
+.logo{font-family:'Manrope';font-weight:600;font-size:1.05rem;letter-spacing:.28em;color:var(--marfim)}
+.logo span{color:var(--ouro)}
+.nav-links{display:flex;gap:2.2rem;font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;font-weight:400}
+.nav-links a{position:relative;padding:.2rem 0}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:0;width:0;height:1px;
+  background:var(--ouro);transition:width .3s;
+}
+.nav-links a:hover::after,.nav-links a:focus-visible::after{width:100%}
+a:focus-visible{outline:2px solid var(--ouro);outline-offset:3px}
+.nav-cta{
+  border:1px solid var(--ouro);color:var(--ouro);
+  padding:.45rem 1.3rem;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+  transition:background .3s,color .3s;
+}
+.nav-cta:hover{background:var(--ouro);color:var(--verde)}
+@media(max-width:820px){.nav-links{display:none}}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;min-height:100svh;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  isolation:isolate;overflow:hidden;
+}
+.hero-img{position:absolute;inset:0;z-index:-2}
+.hero-img img{filter:brightness(.45) saturate(.9)}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:radial-gradient(ellipse at center,transparent 30%,rgba(13,31,25,.85) 100%);
+}
+.hero-inner{padding:7rem 1.5rem 5rem;max-width:880px}
+.hero h1{
+  font-size:clamp(2.4rem,7vw,5rem);font-weight:700;
+  letter-spacing:-.02em;line-height:1.08;margin:1.4rem 0 .6rem;
+}
+.hero h1 em{font-style:normal;color:var(--ouro-claro)}
+.hero p.sub{
+  font-size:clamp(1rem,2vw,1.2rem);letter-spacing:.06em;
+  max-width:540px;margin:1.2rem auto 2.6rem;color:var(--texto);
+}
+.btn-gold{
+  display:inline-block;background:var(--ouro);color:var(--verde);
+  font-family:'Plus Jakarta Sans';font-weight:500;font-size:.85rem;
+  letter-spacing:.28em;text-transform:uppercase;
+  padding:1rem 2.6rem;border:1px solid var(--ouro);
+  transition:background .3s,color .3s;
+}
+.btn-gold:hover{background:transparent;color:var(--ouro)}
+.btn-ghost{
+  display:inline-block;border:1px solid var(--hairline);color:var(--marfim);
+  font-size:.85rem;letter-spacing:.28em;text-transform:uppercase;
+  padding:1rem 2.6rem;margin-left:1rem;transition:border-color .3s,color .3s;
+}
+.btn-ghost:hover{border-color:var(--ouro);color:var(--ouro)}
+@media(max-width:560px){.btn-ghost{margin:1rem 0 0}}
+
+.hero-fan{margin-top:0}
+.scroll-hint{
+  position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);
+  font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--ouro);
+  animation:float 2.6s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+/* ---------- seções ---------- */
+section{padding:clamp(4.5rem,9vw,8rem) clamp(1.2rem,6vw,5rem)}
+.section-head{text-align:center;max-width:680px;margin:0 auto 3.5rem}
+.section-head h2{
+  font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:600;
+  letter-spacing:-.01em;margin:1rem 0 .8rem;
+}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .scroll-hint{animation:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- o espaço ---------- */
+.espaco{background:var(--verde-2);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+.espaco-grid{
+  display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,5vw,5rem);
+  max-width:1180px;margin:0 auto;align-items:center;
+}
+.espaco-foto{aspect-ratio:4/5;background:#0a1813;overflow:hidden;
+  border-radius:50vw 50vw 0 0}
+.espaco-texto h2{font-size:clamp(1.7rem,3vw,2.4rem);letter-spacing:-.01em;margin:1rem 0 1.4rem}
+.espaco-texto p{margin-bottom:1.2rem;max-width:52ch}
+.numeros{
+  display:flex;gap:2.8rem;margin-top:2.4rem;flex-wrap:wrap;
+  border-top:1px solid var(--hairline);padding-top:1.8rem;
+}
+.numero b{
+  display:block;font-family:'Manrope';font-weight:500;
+  font-size:2rem;font-weight:600;color:var(--ouro-claro);letter-spacing:-.01em;
+}
+.numero span{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase}
+@media(max-width:880px){.espaco-grid{grid-template-columns:1fr}.espaco-foto{aspect-ratio:16/11}}
+
+/* ---------- estrutura ---------- */
+.estrutura-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:1px;background:var(--hairline);max-width:1180px;margin:0 auto;
+  border:1px solid var(--hairline);
+}
+.card{
+  background:var(--verde);padding:2.4rem 2rem;
+  transition:background .35s;
+}
+.card:hover{background:var(--verde-2)}
+.card svg{margin-bottom:1.2rem}
+.card h3{font-size:1rem;letter-spacing:.2em;font-weight:500;margin-bottom:.7rem;text-transform:uppercase}
+.card p{font-size:.95rem;color:var(--texto)}
+
+/* ---------- galeria ---------- */
+.galeria-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;
+  max-width:1080px;margin:0 auto;padding-bottom:2.4rem;
+}
+/* portal em arco — eco direto da logomarca */
+.galeria-grid .item{
+  aspect-ratio:3/4.2;overflow:hidden;background:#0a1813;position:relative;
+  border-radius:50vw 50vw 0 0;
+  border:1px solid var(--hairline);
+  transition:border-color .4s;
+}
+.galeria-grid .item::after{
+  content:"";position:absolute;inset:9px;pointer-events:none;
+  border:1px solid var(--hairline);border-radius:50vw 50vw 0 0;
+  transition:border-color .4s;
+}
+.galeria-grid .item:hover{border-color:var(--ouro)}
+.galeria-grid .item:hover::after{border-color:rgba(201,164,92,.6)}
+/* colunata: coluna central levemente rebaixada, como uma arcada */
+@media(min-width:721px){
+  .galeria-grid .item:nth-child(3n-1){transform:translateY(2.2rem)}
+}
+.galeria-grid .item img{transition:transform .6s ease,filter .6s ease;filter:saturate(.92)}
+.galeria-grid .item:hover img{transform:scale(1.05);filter:saturate(1.05)}
+.galeria-cta{text-align:center;margin-top:2.6rem}
+.galeria-cta a{
+  color:var(--ouro);font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;
+  border-bottom:1px solid var(--hairline);padding-bottom:.3rem;transition:border-color .3s;
+}
+.galeria-cta a:hover{border-color:var(--ouro)}
+@media(max-width:720px){.galeria-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- depoimentos ---------- */
+.depo-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:1.4rem;max-width:1180px;margin:0 auto;
+}
+.depo{
+  position:relative;background:var(--verde-2);
+  border:1px solid var(--hairline);padding:2.6rem 2.2rem 2.2rem;
+}
+.depo::before{
+  content:"“";position:absolute;top:.6rem;left:1.6rem;
+  font-family:'Manrope';font-size:3.4rem;color:var(--ouro);opacity:.55;line-height:1;
+}
+.depo p{font-size:1rem;font-style:italic;margin-bottom:1.6rem}
+.depo .autor{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap}
+.depo .autor b{
+  font-family:'Manrope';font-weight:500;font-size:.92rem;
+  letter-spacing:.02em;font-weight:600;color:var(--marfim);font-style:normal;
+}
+.depo .autor span{font-size:.75rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ouro)}
+
+/* ---------- pré-orçamento ---------- */
+.orcamento{border-top:1px solid var(--hairline)}
+.orc-wrap{max-width:680px;margin:0 auto}
+.orc-form{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem}
+.campo{display:flex;flex-direction:column;gap:.45rem}
+.campo.full{grid-column:1/-1}
+.campo label{
+  font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--ouro);font-weight:500;
+}
+.campo input,.campo select,.campo textarea{
+  background:var(--verde-2);border:1px solid var(--hairline);
+  color:var(--marfim);font-family:'Plus Jakarta Sans';font-weight:300;font-size:1rem;
+  padding:.85rem 1rem;border-radius:0;appearance:none;
+  transition:border-color .3s;
+}
+.campo select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a45c' fill='none'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 1rem center;
+}
+.campo input:focus,.campo select:focus,.campo textarea:focus{
+  outline:none;border-color:var(--ouro);
+}
+.campo input::placeholder,.campo textarea::placeholder{color:rgba(216,210,194,.4)}
+.campo input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.75) sepia(.4) saturate(3) hue-rotate(10deg)}
+.orc-enviar{grid-column:1/-1;text-align:center;margin-top:.6rem}
+.orc-enviar button{
+  background:var(--ouro);color:var(--verde);border:1px solid var(--ouro);
+  font-family:'Plus Jakarta Sans';font-weight:500;font-size:.85rem;
+  letter-spacing:.28em;text-transform:uppercase;
+  padding:1rem 2.8rem;cursor:pointer;transition:background .3s,color .3s;
+}
+.orc-enviar button:hover{background:transparent;color:var(--ouro)}
+.orc-enviar button:focus-visible{outline:2px solid var(--ouro);outline-offset:3px}
+.orc-nota{
+  grid-column:1/-1;text-align:center;font-size:.8rem;
+  letter-spacing:.08em;color:rgba(216,210,194,.55);margin-top:.4rem;
+}
+.orc-erro{
+  grid-column:1/-1;text-align:center;font-size:.85rem;color:#e3a07a;
+  letter-spacing:.06em;display:none;
+}
+.orc-erro.show{display:block}
+@media(max-width:620px){.orc-form{grid-template-columns:1fr}}
+
+/* ---------- contato ---------- */
+.contato{background:var(--verde-2);border-top:1px solid var(--hairline);text-align:center}
+.contato h2{font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-.01em;margin:1rem 0 1.2rem}
+.contato p{max-width:480px;margin:0 auto 2.4rem}
+.contato-info{
+  display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;
+  margin-top:3rem;font-size:.9rem;letter-spacing:.08em;
+}
+.contato-info b{
+  display:block;font-family:'Plus Jakarta Sans';font-weight:500;font-size:.75rem;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--ouro);margin-bottom:.4rem;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:1px solid var(--hairline);
+  padding:2.2rem clamp(1.2rem,5vw,4rem);
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
+  font-size:.78rem;letter-spacing:.14em;color:rgba(216,210,194,.6);
+}
+footer .logo{font-size:.85rem}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="logo" href="#topo"><img class="logo-img" data-logo alt="" aria-hidden="true">MONUMENTAL</a>
+  <div class="nav-links">
+    <a href="#espaco">O Espaço</a>
+    <a href="#estrutura">Estrutura</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#depoimentos">Depoimentos</a>
+    <a href="#orcamento">Orçamento</a>
+    <a href="#contato">Contato</a>
+  </div>
+  <a class="nav-cta" href="https://wa.me/5577998026100" target="_blank" rel="noopener">Reservar</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="topo">
+  <div class="hero-img"><img data-img="hero" alt="Salão do Monumental decorado para evento"></div>
+  <div class="hero-inner">
+    <img class="hero-logo" data-logo alt="Monumental Festas e Eventos">
+    <p class="eyebrow">Livramento de Nossa Senhora · Bahia</p>
+    <h1>Celebre em<br><em>grande estilo</em></h1>
+    <svg class="fan hero-fan" width="120" height="34" viewBox="0 0 120 34" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1">
+        <path d="M60 32 L60 2"/><path d="M60 32 L38 6"/><path d="M60 32 L82 6"/>
+        <path d="M60 32 L20 14"/><path d="M60 32 L100 14"/>
+        <path d="M60 32 L8 26"/><path d="M60 32 L112 26"/>
+      </g>
+      <circle cx="60" cy="32" r="2" fill="currentColor"/>
+    </svg>
+    <p class="sub">Um novo conceito em espaço de festas e eventos: 2.200m² de elegância, conforto e natureza para o seu grande dia.</p>
+    <div>
+      <a class="btn-gold" href="https://wa.me/5577998026100" target="_blank" rel="noopener">Solicitar orçamento</a>
+      <a class="btn-ghost" href="#espaco">Conhecer o espaço</a>
+    </div>
+  </div>
+  <span class="scroll-hint">Descer</span>
+</header>
+
+<!-- ============ O ESPAÇO ============ -->
+<section class="espaco" id="espaco">
+  <div class="espaco-grid">
+    <div class="deco-frame reveal">
+      <span class="corner c1"></span><span class="corner c2"></span>
+      <span class="corner c3"></span><span class="corner c4"></span>
+      <div class="espaco-foto"><img data-img="hall" alt="Hall de entrada em estilo Art Déco"></div>
+    </div>
+    <div class="espaco-texto reveal">
+      <p class="eyebrow">O Espaço</p>
+      <h2>Elegância desde o primeiro passo</h2>
+      <p>A criação do Monumental é a realização de um sonho: oferecer a Livramento e região um espaço de festas inovador, seguro e de alto padrão, em localização privilegiada no centro da cidade.</p>
+      <p>Projetado pela arquiteta Luane Coelho, o espaço recebe seus convidados por um moderno hall em Art Déco e se abre em um salão coberto com pé direito de 5 metros, lustres, iluminação cênica, climatização e tratamento termoacústico.</p>
+      <div class="numeros">
+        <div class="numero"><b>2.200m²</b><span>de área total</span></div>
+        <div class="numero"><b>5m</b><span>de pé direito</span></div>
+        <div class="numero"><b>100%</b><span>climatizado</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ESTRUTURA ============ -->
+<section id="estrutura">
+  <div class="section-head reveal">
+    <p class="eyebrow">Estrutura completa</p>
+    <h2>Tudo o que o seu evento precisa</h2>
+  </div>
+  <div class="estrutura-grid reveal">
+    <div class="card">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#c9a45c" stroke-width="1.2" aria-hidden="true"><path d="M15 3 L27 27 H3 Z"/><path d="M15 11 L21 23 H9 Z"/></svg>
+      <h3>Salão coberto</h3>
+      <p>Pé direito de 5m, lustres, iluminação cênica, tratamento termoacústico e saídas de emergência com portas antipânico.</p>
+    </div>
+    <div class="card">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#c9a45c" stroke-width="1.2" aria-hidden="true"><path d="M15 27 V14"/><path d="M15 14 C15 7 9 4 4 4 C4 11 9 14 15 14 Z"/><path d="M15 14 C15 7 21 4 26 4 C26 11 21 14 15 14 Z"/></svg>
+      <h3>Área verde</h3>
+      <p>Jardins, palmeiras, flores, pergolados e gramado formam um cenário aprazível, integrado com a natureza.</p>
+    </div>
+    <div class="card">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#c9a45c" stroke-width="1.2" aria-hidden="true"><path d="M6 27 V10 H24 V27"/><path d="M3 10 L15 3 L27 10"/><path d="M12 27 V19 H18 V27"/></svg>
+      <h3>Cozinha e bar</h3>
+      <p>Bar, cozinha de apoio e área de serviço independente — estrutura ideal para serviços de alimentos e bebidas.</p>
+    </div>
+    <div class="card">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" stroke="#c9a45c" stroke-width="1.2" aria-hidden="true"><circle cx="15" cy="8" r="4"/><path d="M7 27 C7 19 23 19 23 27"/></svg>
+      <h3>Parquinho infantil</h3>
+      <p>Estrutura em madeira com escorregador e balanços: diversão garantida e segura para as crianças.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERIA ============ -->
+<section id="galeria">
+  <div class="section-head reveal">
+    <p class="eyebrow">Galeria</p>
+    <h2>Momentos no Monumental</h2>
+  </div>
+  <div class="galeria-grid reveal">
+    <div class="item"><img data-img="g1" alt="Evento no Monumental"></div>
+    <div class="item"><img data-img="g2" alt="Decoração de festa"></div>
+    <div class="item"><img data-img="g3" alt="Salão decorado"></div>
+    <div class="item"><img data-img="g4" alt="Detalhe da decoração"></div>
+    <div class="item"><img data-img="g5" alt="Jardins do Monumental"></div>
+    <div class="item"><img data-img="g6" alt="Celebração no salão"></div>
+  </div>
+  <p class="galeria-cta reveal">
+    <a href="https://www.instagram.com/monumentalfestas/" target="_blank" rel="noopener">Ver mais no @monumentalfestas →</a>
+  </p>
+</section>
+
+<!-- ============ DEPOIMENTOS ============ -->
+<section id="depoimentos">
+  <div class="section-head reveal">
+    <p class="eyebrow">Depoimentos</p>
+    <h2>Quem celebrou, recomenda</h2>
+  </div>
+  <!-- TROQUE pelos depoimentos reais (comentários do Instagram / avaliações Google) -->
+  <div class="depo-grid reveal">
+    <div class="depo">
+      <p>"Com uma estrutura impecável e atendimento de excelência do início ao fim, o Espaço Monumental provou ser a escolha perfeita e o lugar número um da nossa região para realizar o nosso sonho! ✨🥂"</p>
+      <div class="autor"><b>Vanessa e Gustavo</b><span>Casamento</span></div>
+    </div>
+    <div class="depo">
+      <p>Estrutura impecável e equipe muito atenciosa do início ao fim. A festa de 15 anos da minha filha ficou exatamente como imaginamos — elegante e inesquecível.</p>
+      <div class="autor"><b>Valdeonice</b><span>15 anos</span></div>
+    </div>
+    <div class="depo">
+      <p>Realizamos a Jornada Pedagógica no Monumental e superou as expectativas: climatização, som, cozinha de apoio... tudo funcionou perfeitamente.</p>
+      <div class="autor"><b>Probinho SEMED/Livramento</b><span>Evento corporativo</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRÉ-ORÇAMENTO ============ -->
+<section class="orcamento" id="orcamento">
+  <div class="orc-wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Pré-orçamento</p>
+      <h2>Conte-nos sobre o seu evento</h2>
+      <p style="margin-top:.8rem">Preencha os dados abaixo e receba seu orçamento diretamente pelo WhatsApp.</p>
+    </div>
+    <div class="orc-form reveal">
+      <div class="campo full">
+        <label for="orc-nome">Seu nome</label>
+        <input id="orc-nome" type="text" placeholder="Como podemos te chamar?" autocomplete="name">
+      </div>
+      <div class="campo">
+        <label for="orc-tipo">Tipo de evento</label>
+        <select id="orc-tipo">
+          <option value="" selected disabled>Selecione</option>
+          <option>Casamento</option>
+          <option>15 anos</option>
+          <option>Aniversário</option>
+          <option>Formatura</option>
+          <option>Evento corporativo</option>
+          <option>Outro</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="orc-data">Data desejada</label>
+        <input id="orc-data" type="date">
+      </div>
+      <div class="campo">
+        <label for="orc-convidados">Nº de convidados</label>
+        <input id="orc-convidados" type="number" min="1" max="2000" placeholder="Ex.: 200">
+      </div>
+      <div class="campo">
+        <label for="orc-periodo">Período</label>
+        <select id="orc-periodo">
+          <option value="" selected disabled>Selecione</option>
+          <option>Diurno</option>
+          <option>Noturno</option>
+          <option>Dia inteiro</option>
+        </select>
+      </div>
+      <div class="campo full">
+        <label for="orc-obs">Observações <span style="text-transform:none;letter-spacing:.05em;color:rgba(216,210,194,.5)">(opcional)</span></label>
+        <textarea id="orc-obs" rows="3" placeholder="Conte detalhes do evento, serviços que precisa, etc."></textarea>
+      </div>
+      <p class="orc-erro" id="orc-erro">Preencha nome, tipo de evento, data e número de convidados para continuar.</p>
+      <div class="orc-enviar">
+        <button type="button" id="orc-btn">Enviar pelo WhatsApp</button>
+      </div>
+      <p class="orc-nota">Você será direcionado ao WhatsApp do Monumental com a mensagem pronta.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTATO ============ -->
+<section class="contato" id="contato">
+  <div class="reveal">
+    <p class="eyebrow">Reservas e orçamentos</p>
+    <h2>Venha celebrar a magia</h2>
+    <svg class="fan" width="120" height="34" viewBox="0 0 120 34" fill="none" aria-hidden="true">
+      <g stroke="currentColor" stroke-width="1">
+        <path d="M60 32 L60 2"/><path d="M60 32 L38 6"/><path d="M60 32 L82 6"/>
+        <path d="M60 32 L20 14"/><path d="M60 32 L100 14"/>
+        <path d="M60 32 L8 26"/><path d="M60 32 L112 26"/>
+      </g>
+      <circle cx="60" cy="32" r="2" fill="currentColor"/>
+    </svg>
+    <p style="margin-top:1.6rem">Agende uma visita e conheça pessoalmente o melhor espaço de eventos de Livramento e região.</p>
+    <a class="btn-gold" href="https://wa.me/5577998026100" target="_blank" rel="noopener">Falar no WhatsApp</a>
+    <div class="contato-info">
+      <div><b>Telefone</b>(77) 99802-6100</div>
+      <div><b>Instagram</b>@monumentalfestas</div>
+      <div><b>Localização</b>Rua Dr. Hildebrando Xavier da Silva, 282 - Centro · Livramento de Nossa Senhora, BA</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="logo"><img class="logo-img" data-logo alt="">MONUMENTAL</span>
+  <span>© 2026 Monumental Festas e Eventos · Livramento de Nossa Senhora, BA</span>
+</footer>
+
+<script>
+/* aplica as imagens do objeto IMAGES */
+document.querySelectorAll("img[data-img]").forEach(el=>{
+  const key = el.dataset.img;
+  if (IMAGES[key]) el.src = IMAGES[key];
+  el.addEventListener("error",()=>{ el.style.opacity=0; }); // some se a imagem não existir ainda
+});
+
+/* aplica a logomarca */
+document.querySelectorAll("[data-logo]").forEach(el=>el.src = LOGO);
+document.getElementById("favicon").href = LOGO;
+
+/* nav sólida ao rolar */
+const nav = document.getElementById("nav");
+addEventListener("scroll",()=>nav.classList.toggle("solid",scrollY>60),{passive:true});
+
+/* reveal on scroll */
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.15});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+/* ---------- pré-orçamento → WhatsApp ---------- */
+const WHATSAPP = "5577998026100";
+
+document.getElementById("orc-btn").addEventListener("click", () => {
+  const v  = id => document.getElementById(id).value.trim();
+  const nome = v("orc-nome"), tipo = v("orc-tipo"), data = v("orc-data"),
+        conv = v("orc-convidados"), periodo = v("orc-periodo"), obs = v("orc-obs");
+
+  const erro = document.getElementById("orc-erro");
+  if (!nome || !tipo || !data || !conv) { erro.classList.add("show"); return; }
+  erro.classList.remove("show");
+
+  const dataBR = data.split("-").reverse().join("/");
+  let msg = `Olá! Gostaria de um pré-orçamento no Monumental Festas e Eventos.\n\n` +
+            `• Nome: ${nome}\n` +
+            `• Evento: ${tipo}\n` +
+            `• Data desejada: ${dataBR}\n` +
+            `• Convidados: ${conv}`;
+  if (periodo) msg += `\n• Período: ${periodo}`;
+  if (obs)     msg += `\n• Observações: ${obs}`;
+
+  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+});
+</script>
+</body>
+</html>
